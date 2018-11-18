@@ -1,0 +1,5 @@
+UI:
+This website takes reference of 'hai360.com';
+
+DB:
+Local database is MySQL, password is 'root';
