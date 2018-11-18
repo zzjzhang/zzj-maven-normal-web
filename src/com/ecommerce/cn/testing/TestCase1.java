@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.BeforeClass;
 
 
-
 public class TestCase1 {
 
 	@BeforeClass
