@@ -3,6 +3,8 @@ package com.ecommerce.cn.testing;
 import org.junit.Test;
 import org.junit.BeforeClass;
 
+
+
 public class TestCase1 {
 
 	@BeforeClass
