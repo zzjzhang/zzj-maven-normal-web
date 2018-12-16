@@ -13,16 +13,15 @@ import java.beans.PropertyVetoException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bet.dao.DBOperator;
 
 
 
 
-public class ServletCornerCustFrance extends HttpServlet {
+public class CornerCustFrance extends HttpServlet {
 	//Fields
 	private static final long serialVersionUID = 1L;
 
-    public ServletCornerCustFrance() {
+    public CornerCustFrance() {
         super();
     }
 
@@ -41,13 +40,13 @@ public class ServletCornerCustFrance extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Map<String, Object>> resultList = new ArrayList<>();
 
-		try {
+		/*try {
 			resultList = DBOperator.selectCornerCustFrance();
 		} catch (PropertyVetoException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}*/
 
 		// Set response : Access-Control-Allow-Origin
 		response.setHeader("Access-Control-Allow-Origin", "*");

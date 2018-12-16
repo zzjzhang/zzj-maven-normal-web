@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Bootstrap Necessary Content -->
 		<!--------------------------------->
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="RESOURCES/css/bootstrap.min.css">
 		<title>BET</title>
 	</head>
 	<body>
@@ -16,7 +16,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-6 col-md-6" style="margin: 5px 0 5px 0">
-						<span aria-hidden="true"></span>&nbsp;&nbsp;电话：56486193
+						<span aria-hidden="true"></span>&nbsp;&nbsp;电话：123456
 					</div>
 					<div class="col-xs-6 col-md-6" style="margin: 5px 0 5px 0">
 
@@ -194,15 +194,19 @@
 
 		<!---------------->
 		<!-- Javascript -->
-		<script type="text/javascript" src="js/jquery_1.9.1.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="RESOURCES/js/jquery_1.9.1.js"></script>
+		<script type="text/javascript" src="RESOURCES/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="RESOURCES/js/echarts.min.js"></script>
 
 		<script type="text/javascript">
-			//Load page - 'ready' method is invoked earlier than 'load'
+			// Load page - 'ready' method is invoked earlier than 'load'
 			// http://www.jq007.com/
 
 			$(document).ready(function() {
+				// HOST & PORT
+				var host = "localhost";
+				var port = "8080";
+
 				// 基于准备好的dom，初始化echarts实例
 				var myChart1 = echarts.init(document.getElementById('main1'));
 
@@ -213,7 +217,7 @@
 				// 发送请求
 				$.ajax({
 					type : "POST",
-					url : "http://localhost:7070/zzj-java-bet/ServletCornerHostEngland",
+					url : "http://" + host + ":" + port + "/zzj-java-bet/ServletCornerHostEngland",
 					dataType : "JSON",
 					beforeSend : function() {
 						//

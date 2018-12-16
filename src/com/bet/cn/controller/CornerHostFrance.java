@@ -1,4 +1,4 @@
-package com.bet.business;
+package com.bet.cn.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -8,9 +8,6 @@ import java.util.Map;
 import net.sf.json.JSONArray;
 import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpSession;
-
-import com.bet.dao.DBOperator;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import java.beans.PropertyVetoException;
@@ -19,11 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-public class ServletCornerHostFrance extends HttpServlet {
+public class CornerHostFrance extends HttpServlet {
 	//Fields
 	private static final long serialVersionUID = 1L;
 
-    public ServletCornerHostFrance() {
+    public CornerHostFrance() {
         super();
     }
 
@@ -42,13 +39,13 @@ public class ServletCornerHostFrance extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Map<String, Object>> resultList = new ArrayList<>();
 		
-		try {
+		/*try {
 			resultList = DBOperator.selectCornerHostFrance();
 		} catch (PropertyVetoException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}*/
 
 		// Set response : Access-Control-Allow-Origin
 		response.setHeader("Access-Control-Allow-Origin", "*");

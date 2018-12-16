@@ -9,8 +9,6 @@ import net.sf.json.JSONArray;
 import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpSession;
 
-import com.bet.dao.DBOperator;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import java.beans.PropertyVetoException;
@@ -19,11 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-public class ServletCornerHostEngland extends HttpServlet {
+public class CornerHostEngland extends HttpServlet {
 	//Fields
 	private static final long serialVersionUID = 1L;
 
-    public ServletCornerHostEngland() {
+    public CornerHostEngland() {
         super();
     }
 
@@ -42,13 +40,13 @@ public class ServletCornerHostEngland extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Map<String, Object>> resultList = new ArrayList<>();
 		
-		try {
+		/*try {
 			resultList = DBOperator.selectCornerHostEngland();
 		} catch (PropertyVetoException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}*/
 		
 		
 		// Set response : Access-Control-Allow-Origin
