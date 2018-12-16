@@ -8,7 +8,6 @@ import java.util.Map;
 import net.sf.json.JSONArray;
 import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpSession;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import java.beans.PropertyVetoException;

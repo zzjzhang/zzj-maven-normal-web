@@ -3,19 +3,18 @@ package com.bet.cn.service;
 import java.io.IOException;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class ServletInit
  */
-@WebServlet(description = "Initialization", urlPatterns = { "/ServletInit" })
+@WebServlet(description = "Initialization", urlPatterns = { "/bet/init" })
 public class Init extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-       
 
     public Init() {
         super();
