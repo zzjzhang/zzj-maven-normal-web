@@ -1,5 +1,6 @@
 package com.ecommerce.cn.bean;
 
+
 public class Product {
 	//1. Fields
 	private String category;
