@@ -3,6 +3,7 @@ package com.bet.cn.config;
 import redis.clients.jedis.Jedis;
 
 
+
 public class RedisConfig {
 
 	private static String ip = "192.168.168.106";
