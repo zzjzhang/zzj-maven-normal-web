@@ -4,6 +4,8 @@ import java.io.IOException;
 import net.sf.json.JSONArray;
 import javax.servlet.ServletConfig;
 import com.ecommerce.cn.bean.Product;
+import com.ecommerce.cn.config.RedisConfig;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import com.ecommerce.cn.dao.DBOperator;
@@ -46,7 +48,7 @@ public class ServletDisplayProductDetail extends HttpServlet {
 
 		//3. Set return product
 		try {
-			product = DBOperator.selectProduct(product);
+			product.setDescription(RedisConfig.hget(null, null));;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -57,14 +59,13 @@ public class ServletDisplayProductDetail extends HttpServlet {
 		//5. Return product detail to client
 		JSONArray jsonArray = JSONArray.fromObject(product);
 
-		//Testing
-		try {
-			Thread.sleep(2*1000);
+		// Testing
+		/*try {
+			Thread.sleep(2 * 1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		//Testing
+		}*/
+		// Testing
 
 		response.getWriter().write(jsonArray.toString());
 

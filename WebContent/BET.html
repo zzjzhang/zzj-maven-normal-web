@@ -1,0 +1,480 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<!--------------------------------->
+		<!-- Bootstrap Necessary Content -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap Necessary Content -->
+		<!--------------------------------->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<title>BET</title>
+	</head>
+	<body>
+		<div class="container-fluid" style="border-bottom: solid 1px #EEE;">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6 col-md-6" style="margin: 5px 0 5px 0">
+						<span aria-hidden="true"></span>&nbsp;&nbsp;电话：56486193
+					</div>
+					<div class="col-xs-6 col-md-6" style="margin: 5px 0 5px 0">
+
+						<!-- Login Button -->
+						<a id="aOpenLoginModal" data-toggle="modal" data-target="#loginModal"
+							href="#" style="color: black; text-decoration: none; outline: none; display: inline;">
+							<span aria-hidden="true"></span>&nbsp;&nbsp;登录
+						</a>
+
+						<!-- User Photo -->
+						<a id="aOpenImgModal" data-toggle="modal" data-target="#imgModal"
+							href="#" style="text-decoration: none; outline: none; display: none;">
+							<img id="imgPhoto" src="" alt="..." class="img-circle" style="max-height: 18px;">
+						</a>
+
+						<!-- Photo Window -->
+						<div id="imgModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+							<div class="modal-dialog modal-sm">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" id="btnCloseImg" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title" id="imgModalLabel">用户信息</h4>
+									</div>
+									<div class="modal-body" style="text-align: center;">
+
+										<img id="imgPhotoBig" src="" alt="..." class="img-circle">
+
+									</div>
+									<div class="modal-footer">
+										<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+									    	<a href="#" class="btn btn-default" role="button" 
+									    		style="border-width: 0; border-radius: 0;">
+									    		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+									    	</a>
+									    	<a href="#" class="btn btn-default" role="button" 
+									    		style="border-top-width: 0; border-bottom-width: 0; border-radius: 0;">
+									    		<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+									    	</a>
+									    	<a href="#" class="btn btn-default" role="button" 
+									    		style="border-width: 0; border-radius: 0;" onclick="javascript: logOut()" >
+									    		<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+									    	</a>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+
+			<div class="row">
+				<div style="padding: 15px;">
+					<div class="col-xs-12 col-md-12">
+						
+						<!-- Product Section -->
+						<!-- Product Section -->
+						<!-- Product Section -->
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+											aria-controls="collapseOne" style="text-decoration: none;">
+											<span aria-hidden="true"></span>&nbsp;&nbsp;英超 - 角球 - 主场
+										</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										<div class="row" >
+											<!-- ECharts 1 -->
+											<div id="main1" style="width: 90%; height: 400px; margin: auto"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingTwo">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+											aria-expanded="false" aria-controls="collapseTwo" style="text-decoration: none;">
+											<span aria-hidden="true"></span>&nbsp;&nbsp;英超 - 角球 - 客场
+										</a>
+									</h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="panel-body">
+									
+										<div class="row">
+											<!-- ECharts 2 -->
+											<div id="main2" style="width: 998px; height: 400px; margin: auto" ></div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+											aria-expanded="false" aria-controls="collapseThree" style="text-decoration: none;">
+											<span aria-hidden="true"></span>&nbsp;&nbsp;法甲 - 角球 - 主场
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+									
+										<div class="row">
+											<!-- ECharts 3 -->
+											<div id="main3" style="width: 998px; height: 400px; margin: auto" ></div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingFour">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
+											aria-expanded="false" aria-controls="collapseFour" style="text-decoration: none;">
+											<span aria-hidden="true"></span>&nbsp;&nbsp;法甲 - 角球 - 客场
+										</a>
+									</h4>
+								</div>
+								<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+									<div class="panel-body">
+									
+										<div class="row">
+											<!-- ECharts 4 -->
+											<div id="main4" style="width: 998px; height: 400px; margin: auto" ></div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- <div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+											aria-expanded="false" aria-controls="collapseThree" style="text-decoration: none;">
+											<span aria-hidden="true"></span>&nbsp;&nbsp;...
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									<div class="panel-body">
+
+										<div class="row">
+											
+										</div>
+										
+									</div>
+								</div>
+							</div> -->
+
+						</div>
+						<!-- Product Section -->
+						<!-- Product Section -->
+						<!-- Product Section -->
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!---------------->
+		<!-- Javascript -->
+		<script type="text/javascript" src="js/jquery_1.9.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+
+		<script type="text/javascript">
+			//Load page - 'ready' method is invoked earlier than 'load'
+			// http://www.jq007.com/
+
+			$(document).ready(function() {
+				// 基于准备好的dom，初始化echarts实例
+				var myChart1 = echarts.init(document.getElementById('main1'));
+
+				var avgSelfTeamArrayEngland = [];
+				var avgSelfDataArrayEngland = [];
+				var avgOppositeDataArrayEngland = [];
+
+				// 发送请求
+				$.ajax({
+					type : "POST",
+					url : "http://localhost:7070/zzj-java-bet/ServletCornerHostEngland",
+					dataType : "JSON",
+					beforeSend : function() {
+						//
+					},
+					success : function(data) {
+						//console
+						console.log(data);
+						//judge existence
+
+						for(var i = 0; i < data.length; i++) {
+							avgSelfTeamArrayEngland.push(data[i].team);
+							avgSelfDataArrayEngland.push(data[i].avgSelf);
+							avgOppositeDataArrayEngland.push(data[i].avgOpposite);
+						}
+
+						console.log(avgSelfDataArrayEngland);
+						console.log(avgOppositeDataArrayEngland);
+
+						// 指定图表的配置项和数据
+						var option1 = {
+							title: {
+								text: '角球数'
+							},
+							tooltip: {},
+							legend: {
+								data:['己方', '对方']
+							},
+							xAxis: {
+								data: avgSelfTeamArrayEngland
+							},
+							yAxis: {},
+							series: [
+								{
+									name: '己方',
+									type: 'bar',
+									stack: 'one',
+									data: avgSelfDataArrayEngland
+								},
+								{
+									name: '对方',
+									type: 'bar',
+									stack: 'one',
+									data: avgOppositeDataArrayEngland
+								}
+							]
+						};
+
+						// 使用刚指定的配置项和数据显示图表
+						myChart1.setOption(option1);
+						
+					},
+					error : function(e) {
+						//alert(JSON.stringify(e));
+						console.log(e);
+					}
+				})
+
+
+
+				var myChart2 = echarts.init(document.getElementById('main2'));
+
+				var custAvgSelfTeamArrayEngland = [];
+				var custAvgSelfDataArrayEngland = [];
+				var custAvgOppositeDataArrayEngland = [];
+
+				$.ajax({
+					type : "POST",
+					url : "http://localhost:7070/zzj-java-bet/ServletCornerCustEngland",
+					dataType : "JSON",
+					beforeSend : function() {
+						//
+					},
+					success : function(data) {
+						//console
+						console.log(data);
+						//judge existence
+
+						for(var i = 0; i < data.length; i++) {
+							custAvgSelfTeamArrayEngland.push(data[i].team);
+							custAvgSelfDataArrayEngland.push(data[i].avgSelf);
+							custAvgOppositeDataArrayEngland.push(data[i].avgOpposite);
+						}
+
+						console.log(custAvgSelfDataArrayEngland);
+						console.log(custAvgOppositeDataArrayEngland);
+
+						// 指定图表的配置项和数据
+						var option2 = {
+							title: {
+								text: '角球数'
+							},
+							tooltip: {},
+							legend: {
+								data:['己方', '对方']
+							},
+							xAxis: {
+								data: custAvgSelfTeamArrayEngland
+							},
+							yAxis: {},
+							series: [
+								{
+									name: '己方',
+									type: 'bar',
+									stack: 'one',
+									data: custAvgSelfDataArrayEngland
+								},
+								{
+									name: '对方',
+									type: 'bar',
+									stack: 'one',
+									data: custAvgOppositeDataArrayEngland
+								}
+							]
+						};
+
+						// 使用刚指定的配置项和数据显示图表
+						myChart2.setOption(option2);
+					},
+					error : function(e) {
+						//alert(JSON.stringify(e));
+						console.log(e);
+					}
+				})
+
+
+
+				var myChart3 = echarts.init(document.getElementById('main3'));
+
+				var avgSelfTeamArrayFrance = [];
+				var avgSelfDataArrayFrance = [];
+				var avgOppositeDataArrayFrance = [];
+
+				// 发送请求
+				$.ajax({
+					type : "POST",
+					url : "http://localhost:7070/zzj-java-bet/ServletCornerHostFrance",
+					dataType : "JSON",
+					beforeSend : function() {
+						//
+					},
+					success : function(data) {
+						//console
+						console.log(data);
+						//judge existence
+
+						for(var i = 0; i < data.length; i++) {
+							avgSelfTeamArrayFrance.push(data[i].team);
+							avgSelfDataArrayFrance.push(data[i].avgSelf);
+							avgOppositeDataArrayFrance.push(data[i].avgOpposite);
+						}
+
+						console.log(avgSelfDataArrayFrance);
+						console.log(avgOppositeDataArrayFrance);
+
+						// 指定图表的配置项和数据
+						var option3 = {
+							title: {
+								text: '角球数'
+							},
+							tooltip: {},
+							legend: {
+								data:['己方', '对方']
+							},
+							xAxis: {
+								data: avgSelfTeamArrayFrance
+							},
+							yAxis: {},
+							series: [
+								{
+									name: '己方',
+									type: 'bar',
+									stack: 'one',
+									data: avgSelfDataArrayFrance
+								},
+								{
+									name: '对方',
+									type: 'bar',
+									stack: 'one',
+									data: avgOppositeDataArrayFrance
+								}
+							]
+						};
+
+						// 使用刚指定的配置项和数据显示图表
+						myChart3.setOption(option3);
+					},
+					error : function(e) {
+						//alert(JSON.stringify(e));
+						console.log(e);
+					}
+				})
+
+
+
+				var myChart4 = echarts.init(document.getElementById('main4'));
+
+				var custAvgSelfTeamArrayFrance = [];
+				var custAvgSelfDataArrayFrance = [];
+				var custAvgOppositeDataArrayFrance = [];
+
+				$.ajax({
+					type : "POST",
+					url : "http://localhost:7070/zzj-java-bet/ServletCornerCustFrance",
+					dataType : "JSON",
+					beforeSend : function() {
+						//
+					},
+					success : function(data) {
+						//console
+						console.log(data);
+						//judge existence
+
+						for(var i = 0; i < data.length; i++) {
+							custAvgSelfTeamArrayFrance.push(data[i].team);
+							custAvgSelfDataArrayFrance.push(data[i].avgSelf);
+							custAvgOppositeDataArrayFrance.push(data[i].avgOpposite);
+						}
+
+						console.log(custAvgSelfDataArrayFrance);
+						console.log(custAvgOppositeDataArrayFrance);
+
+						// 指定图表的配置项和数据
+						var option4 = {
+							title: {
+								text: '角球数'
+							},
+							tooltip: {},
+							legend: {
+								data:['己方', '对方']
+							},
+							xAxis: {
+								data: custAvgSelfTeamArrayFrance
+							},
+							yAxis: {},
+							series: [
+								{
+									name: '己方',
+									type: 'bar',
+									stack: 'one',
+									data: custAvgSelfDataArrayFrance
+								},
+								{
+									name: '对方',
+									type: 'bar',
+									stack: 'one',
+									data: custAvgOppositeDataArrayFrance
+								}
+							]
+						};
+
+						// 使用刚指定的配置项和数据显示图表
+						myChart4.setOption(option4);
+					},
+					error : function(e) {
+						//alert(JSON.stringify(e));
+						console.log(e);
+					}
+				})
+				
+			});
+
+		</script>
+	</body>
+</html>

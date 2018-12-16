@@ -17,7 +17,7 @@ public class Main {
 		System.out.println(request.getParameter("name"));
 		System.out.println(request.getParameter("password"));
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("MainCategory");
+		mv.setViewName("MAINCATEGORY");
 		return mv;
 	}
 

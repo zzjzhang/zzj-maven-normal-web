@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Bootstrap Necessary Content -->
 		<!--------------------------------->
-		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/RESOURCES/css/bootstrap.min.css">
 		<title>Welcome 2 Online Market</title>
 	</head>
 	<body>
@@ -123,7 +123,7 @@
 
 					<div style="padding: 15px">
 						<a href="#" style="padding: 4px;">
-							<img src="<%=request.getContextPath()%>/resources/img/Logo.png" alt="..." style="max-height: 30px; width: auto;"/>
+							<img src="<%=request.getContextPath()%>/RESOURCES/img/Logo.png" alt="..." style="max-height: 30px; width: auto;"/>
 						</a>
 					</div>
 
@@ -152,19 +152,19 @@
 					  <!-- Wrapper for slides -->
 					  <div class="carousel-inner" role="listbox">
 					    <div class="item active">
-					      <img src="<%=request.getContextPath()%>/resources/img/0.jpg" alt="...">
+					      <img src="<%=request.getContextPath()%>/RESOURCES/img/0.jpg" alt="...">
 					      <div class="carousel-caption">
 					        ...
 					      </div>
 					    </div>
 					    <div class="item">
-					      <img src="<%=request.getContextPath()%>/resources/img/1.jpg" alt="...">
+					      <img src="<%=request.getContextPath()%>/RESOURCES/img/1.jpg" alt="...">
 					      <div class="carousel-caption">
 					        ...
 					      </div>
 					    </div>
 					    <div class="item">
-					      <img src="<%=request.getContextPath()%>/resources/img/2.jpg" alt="...">
+					      <img src="<%=request.getContextPath()%>/RESOURCES/img/2.jpg" alt="...">
 					      <div class="carousel-caption">
 					        ...
 					      </div>
@@ -207,19 +207,19 @@
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail" style="outline: none;"
 													data-toggle="modal" data-target="#productDetailModal" >
-													<img src="<%=request.getContextPath()%>/resources/img/1_Drink/tea.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/1_Drink/tea.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail" style="outline: none;"
 													data-toggle="modal" data-target="#productDetailModal" >
-													<img src="<%=request.getContextPath()%>/resources/img/1_Drink/soda.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/1_Drink/soda.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail" style="outline: none;"
 													data-toggle="modal" data-target="#productDetailModal" >
-													<img src="<%=request.getContextPath()%>/resources/img/1_Drink/wine.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/1_Drink/wine.png" alt="..." />
 												</a>
 											</div>
 										</div>
@@ -240,17 +240,17 @@
 										<div class="row">
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/2_Electric/Phone.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/2_Electric/Phone.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/2_Electric/Thermos.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/2_Electric/Thermos.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/2_Electric/Printer.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/2_Electric/Printer.png" alt="..." />
 												</a>
 											</div>
 										</div>
@@ -258,17 +258,17 @@
 										<div class="row">
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/2_Electric/HardDisk.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/2_Electric/HardDisk.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/2_Electric/NotebookComputer.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/2_Electric/NotebookComputer.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/2_Electric/VacuumCleaner.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/2_Electric/VacuumCleaner.png" alt="..." />
 												</a>
 											</div>
 										</div>
@@ -276,17 +276,17 @@
 										<div class="row">
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/2_Electric/PadController.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/2_Electric/PadController.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/2_Electric/Microwave.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/2_Electric/Microwave.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/2_Electric/Fan.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/2_Electric/Fan.png" alt="..." />
 												</a>
 											</div>
 										</div>
@@ -308,17 +308,17 @@
 										<div class="row">
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/3_Sports/Basketball.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/3_Sports/Basketball.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/3_Sports/Boxing.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/3_Sports/Boxing.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/3_Sports/Athletics.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/3_Sports/Athletics.png" alt="..." />
 												</a>
 											</div>
 										</div>
@@ -326,17 +326,17 @@
 										<div class="row">
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/3_Sports/PingPong.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/3_Sports/PingPong.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/3_Sports/Helmet.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/3_Sports/Helmet.png" alt="..." />
 												</a>
 											</div>
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<a href="#" class="thumbnail">
-													<img src="<%=request.getContextPath()%>/resources/img/3_Sports/Swimming.png" alt="..." />
+													<img src="<%=request.getContextPath()%>/RESOURCES/img/3_Sports/Swimming.png" alt="..." />
 												</a>
 											</div>
 										</div>
@@ -369,7 +369,7 @@
 												<div class="col-xs-12 col-sm-12 col-md-12">
 													<img id="imgProductBig" src="" alt="..." class="img-circle" style="display: none;">
 													<img id="imgProductDetailLoading" alt="..." 
-												src="<%=request.getContextPath()%>/resources/img/Environment/Loading.gif" style="display: inline">
+												src="<%=request.getContextPath()%>/RESOURCES/img/Environment/Loading.gif" style="display: inline">
 												</div>
 											</div>
 											<div class="row">
@@ -443,16 +443,16 @@
 
 		<!---------------->
 		<!-- Javascript -->
-		<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery_1.9.1.js"></script>
-		<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath()%>/RESOURCES/js/jquery_1.9.1.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath()%>/RESOURCES/js/bootstrap.min.js"></script>
 
 		<script type="text/javascript">
 			//Load page - 'ready' method is invoked earlier than 'load'
 			$(document).ready(function() {
 				if(window.sessionStorage.getItem("name")) {
 					//Change photo
-					$("#imgPhoto").attr("src", "<%=request.getContextPath()%>/resources/img/0_Head/"+ window.sessionStorage.getItem("name") +".jpeg");
-					$("#imgPhotoBig").attr("src", "<%=request.getContextPath()%>/resources/img/0_Head/"+ window.sessionStorage.getItem("name") +".jpeg");
+					$("#imgPhoto").attr("src", "<%=request.getContextPath()%>/RESOURCES/img/0_Head/"+ window.sessionStorage.getItem("name") +".jpeg");
+					$("#imgPhotoBig").attr("src", "<%=request.getContextPath()%>/RESOURCES/img/0_Head/"+ window.sessionStorage.getItem("name") +".jpeg");
 					//Change Login button
 					$("#aOpenLoginModal").css("display", "none");
 					$("#aOpenImgModal").css("display", "inline");
@@ -491,8 +491,8 @@
 							//Close Login window
 							$("#btnCloseLogin").trigger("click");
 							//Change photo
-							$("#imgPhoto").attr("src", "<%=request.getContextPath()%>/resources/img/0_Head/"+ data[0]["name"] +".jpeg");
-							$("#imgPhotoBig").attr("src", "<%=request.getContextPath()%>/resources/img/0_Head/"+ data[0]["name"] +".jpeg");
+							$("#imgPhoto").attr("src", "<%=request.getContextPath()%>/RESOURCES/img/0_Head/"+ data[0]["name"] +".jpeg");
+							$("#imgPhotoBig").attr("src", "<%=request.getContextPath()%>/RESOURCES/img/0_Head/"+ data[0]["name"] +".jpeg");
 							//Change Login button
 							$("#aOpenLoginModal").css("display", "none");
 							$("#aOpenImgModal").css("display", "inline");

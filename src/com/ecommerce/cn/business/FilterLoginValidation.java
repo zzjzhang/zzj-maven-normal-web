@@ -10,8 +10,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.ServletException;
 
 
-
-
 public class FilterLoginValidation implements Filter {
 
     public FilterLoginValidation() {
