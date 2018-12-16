@@ -26,13 +26,12 @@ public class Init extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	
-	private Jedis jedis = RedisConfig.jedis;
-	
-	
+	private Jedis jedis;
+
+
+
     public Init() {
         super();
-        
         jedis = RedisConfig.jedis;
     }
 
@@ -40,58 +39,58 @@ public class Init extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		String path = this.getClass().getResource("/").getPath();
 		int index = path.indexOf("WEB-INF");
-		
+
 		path = path.substring(0, index);
-		path = path + "RESOURCES" + File.separatorChar + "data" + File.separatorChar + "bet";
-		
-		File file1 = new File(path);
-		File[] files = file1.listFiles();
-		
+		String dataFileDir = path + "RESOURCES" + File.separatorChar + "data" + File.separatorChar + "bet";
+
+		File dataFile = new File(dataFileDir);
+		File[] files = dataFile.listFiles();
+
 		for(File file : files) {
 			String fileName = file.getName();
 			fileName = fileName.substring(0, fileName.lastIndexOf("."));
 			FileReader fileReader;
-			
+
 			try {
 				fileReader = new FileReader(file);
-				BufferedReader bReader = new BufferedReader(fileReader);
+				BufferedReader bufReader = new BufferedReader(fileReader);
 				String content = "";
-				while((content = bReader.readLine()) != null) {
-					ObjectMapper om = new ObjectMapper();
-					Map<String, Object> mapJson = om.readValue(content, Map.class);
-					
-					Set<String> keySet = mapJson.keySet();
 
-					String team = String.valueOf(mapJson.get("team"));
+				while((content = bufReader.readLine()) != null) {
+					ObjectMapper objMapper = new ObjectMapper();
+					Map<String, Object> dataMap = objMapper.readValue(content, Map.class);
 
-					String round = jedis.hget(team, "round");
-					int roundCur = 0;
-					
-					if(round != null && !round.equals("")) {
-						roundCur = Integer.parseInt(round);
+					String team = String.valueOf(dataMap.get("team"));
+					String hkey = "bet_" + fileName + "_" + team + "_2018";
+
+					String roundStr = jedis.hget(hkey, "round");
+					int roundInt = 0;
+
+					if(roundStr != null && !roundStr.equals("")) {
+						roundInt = Integer.parseInt(roundStr);
 					}
 
-					roundCur = roundCur + 1;
+					roundInt = roundInt + 1;
 
-					String hkey = "bet_" + fileName + "_" + team + "_2018";
-					
-					jedis.hset(hkey, "round", String.valueOf(roundCur));
+					jedis.hset(hkey, "round", String.valueOf(roundInt));
 
-					for(String key : keySet) {
-						if(key.equals("cust_self") || key.equals("cust_opposite")) {
-							int value = Integer.parseInt(String.valueOf(mapJson.get(key)));
-							
-							String valCur = jedis.hget(hkey, key);
-							int intCur = 0;
-							
-							if(valCur != null && !valCur.equals("")) {
-								intCur = Integer.parseInt(valCur);
+					Set<String> fieldSet = dataMap.keySet();
+
+					for(String field : fieldSet) {
+						if(field.equals("cust_self") || field.equals("cust_opposite")) {
+							int value = Integer.parseInt(String.valueOf(dataMap.get(field)));
+
+							String valCurStr = jedis.hget(hkey, field);
+							int valCurInt = 0;
+
+							if(valCurStr != null && !valCurStr.equals("")) {
+								valCurInt = Integer.parseInt(valCurStr);
 							}
 
-							int intNew = intCur + value;
-							String valNew = String.valueOf(intNew);
+							valCurInt = valCurInt + value;
+							valCurStr = String.valueOf(valCurInt);
 
-							jedis.hset(hkey, key, valNew);
+							jedis.hset(hkey, field, valCurStr);
 						}
 					}
 				}
@@ -120,5 +119,14 @@ public class Init extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
