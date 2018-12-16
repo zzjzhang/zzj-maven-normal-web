@@ -4,12 +4,10 @@ import java.util.Map;
 import java.util.List;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.sql.SQLException;
 import net.sf.json.JSONArray;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
-import java.beans.PropertyVetoException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
