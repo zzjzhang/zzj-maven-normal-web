@@ -8,6 +8,7 @@ import java.util.Map;
 import net.sf.json.JSONArray;
 import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpSession;
+import com.bet.cn.service.CorHostEngService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import java.beans.PropertyVetoException;
@@ -20,12 +21,16 @@ public class CornerHostEngland extends HttpServlet {
 	//Fields
 	private static final long serialVersionUID = 1L;
 
+	private CorHostEngService corHostEngService;
+	
+	
+	
     public CornerHostEngland() {
         super();
     }
 
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		corHostEngService = new CorHostEngService();
 	}
 
 	public void destroy() {
@@ -38,16 +43,9 @@ public class CornerHostEngland extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Map<String, Object>> resultList = new ArrayList<>();
-		
-		/*try {
-			resultList = DBOperator.selectCornerHostEngland();
-		} catch (PropertyVetoException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}*/
-		
-		
+
+		resultList = corHostEngService.service();
+
 		// Set response : Access-Control-Allow-Origin
 		response.setHeader("Access-Control-Allow-Origin", "*");
 
