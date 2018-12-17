@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.bet.cn.service.CorCustEngService;
 
 
 
@@ -18,12 +19,15 @@ public class CornerCustEngland extends HttpServlet {
 	//Fields
 	private static final long serialVersionUID = 1L;
 
+	private CorCustEngService corCustEngService;
+	
+	
     public CornerCustEngland() {
         super();
     }
 
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
+		corCustEngService = new CorCustEngService();
 	}
 
 	public void destroy() {
@@ -37,13 +41,7 @@ public class CornerCustEngland extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Map<String, Object>> resultList = new ArrayList<>();
 
-		/*try {
-			resultList = DBOperator.selectCornerCustEngland();
-		} catch (PropertyVetoException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}*/
+		resultList = corCustEngService.service();
 
 		// Set response : Access-Control-Allow-Origin
 		response.setHeader("Access-Control-Allow-Origin", "*");

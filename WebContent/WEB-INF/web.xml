@@ -43,6 +43,12 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
         <servlet-class>com.bet.cn.controller.CornerHostEngland</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <description></description>
+        <servlet-name>cornerCustEngland</servlet-name>
+        <servlet-class>com.bet.cn.controller.CornerCustEngland</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
   
   
   
@@ -50,6 +56,10 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
     <servlet-mapping>
         <servlet-name>cornerHostEngland</servlet-name>
         <url-pattern>/cornerHostEngland</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cornerCustEngland</servlet-name>
+        <url-pattern>/cornerCustEngland</url-pattern>
     </servlet-mapping>
   
   

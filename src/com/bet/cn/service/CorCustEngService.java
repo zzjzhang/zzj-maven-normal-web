@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-public class CorHostEngService {
+public class CorCustEngService {
 
 	private Jedis jedis = RedisConfig.jedis;
 
@@ -29,10 +29,10 @@ public class CorHostEngService {
 	public List<Map<String, Object>> service() {
 		List<Map<String, Object>> resultList = new ArrayList<>();
 
-		Set<String> keys = jedis.keys("bet_football_corner_host_england_*_2018");
-		
+		Set<String> keys = jedis.keys("bet_football_corner_cust_england_*_2018");
+
 		for(String key : keys) {
-			int startIndex = key.indexOf("bet_football_corner_host_england_") + "bet_football_corner_host_england_".length();
+			int startIndex = key.indexOf("bet_football_corner_cust_england_") + "bet_football_corner_cust_england_".length();
 			int endIndex = key.indexOf("_2018");
 
 			String team = key.substring(startIndex, endIndex);
@@ -40,8 +40,8 @@ public class CorHostEngService {
 			Map<String, Object> result = new HashMap<>();
 			result.put("team", team);
 
-			int custSelf = Integer.parseInt(jedis.hget(key, "host_self"));
-			int custOpposite = Integer.parseInt(jedis.hget(key, "host_opposite"));
+			int custSelf = Integer.parseInt(jedis.hget(key, "cust_self"));
+			int custOpposite = Integer.parseInt(jedis.hget(key, "cust_opposite"));
 			int round = Integer.parseInt(jedis.hget(key, "round"));
 
 			result.put("avgSelf", custSelf / round);
