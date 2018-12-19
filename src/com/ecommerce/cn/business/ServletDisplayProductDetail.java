@@ -4,7 +4,6 @@ import java.io.IOException;
 import net.sf.json.JSONArray;
 import javax.servlet.ServletConfig;
 import com.ecommerce.cn.bean.Product;
-import com.ecommerce.cn.config.RedisConfig;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -48,7 +47,7 @@ public class ServletDisplayProductDetail extends HttpServlet {
 
 		//3. Set return product
 		try {
-			product.setDescription(RedisConfig.hget(null, null));;
+			//product.setDescription(RedisConfig.hget(null, null));;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -3,6 +3,8 @@ package com.ecommerce.cn.business;
 import java.io.IOException;
 import java.sql.SQLException;
 import net.sf.json.JSONArray;
+
+import com.config.RedisConfig;
 import com.ecommerce.cn.bean.User;
 import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpSession;
@@ -10,7 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import com.ecommerce.cn.dao.DBOperator;
 import java.beans.PropertyVetoException;
-import com.ecommerce.cn.config.RedisConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -73,7 +74,7 @@ public class ServletLogin extends HttpServlet {
 			response.getWriter().write(jsonArray.toString());
 		};
 
-		RedisConfig.init();
+		//RedisConfig.init();
 	}
 
 }

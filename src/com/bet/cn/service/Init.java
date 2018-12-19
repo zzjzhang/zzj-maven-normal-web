@@ -8,12 +8,14 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import redis.clients.jedis.Jedis;
 import javax.servlet.ServletConfig;
-import com.bet.cn.config.RedisConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import org.codehaus.jackson.map.ObjectMapper;
+
+import com.config.RedisConfig;
+
 import javax.servlet.http.HttpServletResponse;
 
 
@@ -32,7 +34,7 @@ public class Init extends HttpServlet {
 
     public Init() {
         super();
-        jedis = RedisConfig.jedis;
+        // jedis = RedisConfig.getJedis();
     }
 
 
@@ -77,7 +79,7 @@ public class Init extends HttpServlet {
 					Set<String> fieldSet = dataMap.keySet();
 
 					for(String field : fieldSet) {
-						if(field.equals("cust_self") || field.equals("cust_opposite")) {
+						if(field.equals("cust_self") || field.equals("cust_opposite") || field.equals("host_self") || field.equals("host_opposite")) {
 							int value = Integer.parseInt(String.valueOf(dataMap.get(field)));
 
 							String valCurStr = jedis.hget(hkey, field);

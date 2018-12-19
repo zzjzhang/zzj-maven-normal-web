@@ -1,62 +1,64 @@
 package com.bet.cn.service;
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import net.sf.json.JSONArray;
+import java.util.List;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collections;
 import redis.clients.jedis.Jedis;
-import javax.servlet.ServletConfig;
-import javax.servlet.http.HttpSession;
+import com.bet.cn.bean.CornerObj;
 import com.bet.cn.config.RedisConfig;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import java.beans.PropertyVetoException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 
 
 public class CorHostEngService {
 
-	private Jedis jedis = RedisConfig.jedis;
+	private Jedis jedis = null;
 
 
 
 	public List<Map<String, Object>> service() {
-		List<Map<String, Object>> resultList = new ArrayList<>();
+		jedis = new Jedis(RedisConfig.ip, RedisConfig.port);
 
-		Set<String> keys = jedis.keys("bet_football_corner_host_england_*_2018");
-		
+		List<Map<String, Object>> resultList = new ArrayList<>();
+		List<CornerObj> cornerObjList = new ArrayList<>();
+		Set<String> keys = jedis.keys("bet_football_corner_host_england_*");
+
 		for(String key : keys) {
 			int startIndex = key.indexOf("bet_football_corner_host_england_") + "bet_football_corner_host_england_".length();
 			int endIndex = key.indexOf("_2018");
 
 			String team = key.substring(startIndex, endIndex);
-			
-			Map<String, Object> result = new HashMap<>();
-			result.put("team", team);
-
-			int custSelf = Integer.parseInt(jedis.hget(key, "host_self"));
-			int custOpposite = Integer.parseInt(jedis.hget(key, "host_opposite"));
+			int hostSelf = Integer.parseInt(jedis.hget(key, "host_self"));
+			int hostOpposite = Integer.parseInt(jedis.hget(key, "host_opposite"));
 			int round = Integer.parseInt(jedis.hget(key, "round"));
 
-			result.put("avgSelf", custSelf / round);
-			result.put("avgOpposite", custOpposite / round);
-			
-			resultList.add(result);
+			CornerObj cornerObj = new CornerObj();
+			cornerObj.setTeam(team);
+			cornerObj.setAvgSelf(hostSelf / round);
+			cornerObj.setAvgOpposite(hostOpposite / round);
+
+			cornerObjList.add(cornerObj);
 		}
 
+		if(jedis != null) {
+			jedis.close();
+		}
+
+		// 参考资料: https://www.cnblogs.com/xiaoxing/p/5977810.html
+		Collections.sort(cornerObjList);
+
+		for(CornerObj cornerObj : cornerObjList) {
+			Map<String, Object> mapObj = new HashMap<>();
+			mapObj.put("team", cornerObj.getTeam());
+			mapObj.put("avgSelf", cornerObj.getAvgSelf());
+			mapObj.put("avgOpposite", cornerObj.getAvgOpposite());
+
+			resultList.add(mapObj);
+		}
+		
 		return resultList;
-	}
-	
-	
-	
-	public static void main(String[] args) {
-		new CorHostEngService().service();
 	}
 
 }
