@@ -16,11 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-public class CornerHostFrance extends HttpServlet {
+public class QueryCornerHostFrance extends HttpServlet {
 	//Fields
 	private static final long serialVersionUID = 1L;
 
-    public CornerHostFrance() {
+    public QueryCornerHostFrance() {
         super();
     }
 

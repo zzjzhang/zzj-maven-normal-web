@@ -3,32 +3,33 @@ window.onload = function() {
 	setInterval(function() {
 
 		var frame = document.getElementsByClassName("ipn-Classification ipn-Classification-open ")[1];
-		var frame1 = frame.children[1];
+		var frameFootball = frame.children[1];
 
-		var childrenFrames = frame1.children;
+		var frameGames = frameFootball.children;
 
-		for (var i = 0, len = childrenFrames.length; i < len; i++) {
-			var content = childrenFrames[i];
-			var gameContent = content.children[3];
-			var gameContentInner1 = gameContent.children[0];
-			var gameContentInner2 = gameContentInner1.children[0];
+		for (var i = 0, len = frameGames.length; i < len; i++) {
+			var frameGame = frameGames[i];
+			var gameContent = frameGame.children[3];
 
-			var gameContentInner3 = gameContentInner2.children[1];
-			var gameContentInner4 = gameContentInner2.children[2];
+			var gameContentInn = gameContent.children[0];
+			var gameContentInner = gameContentInn.children[0];
 
-			var team1 = gameContentInner3.children[0].innerHTML;
-			var team2 = gameContentInner3.children[1].innerHTML;
+			var gameContentInnerTeam = gameContentInner.children[1];
+			var gameContentInnerScores = gameContentInner.children[2];
 
-			var scores = gameContentInner4.children[0].innerHTML;
+			var team0 = gameContentInnerTeam.children[0].innerHTML;
+			var team1 = gameContentInnerTeam.children[1].innerHTML;
+
+			var scores = gameContentInnerScores.children[0].innerHTML;
 			var score0 = scores.split("-")[0];
 			var score1 = scores.split("-")[1];
 
-			var times = gameContentInner4.children[1].innerText;
+			var times = gameContentInnerScores.children[1].innerText;
 			var minutes = times.split(":")[0];
 
 			if(score0 > 0 || score1 > 0) {
 				if(minutes < 85) {
-					console.log(team1 + " vs " + team2);
+					console.log(team0 + " vs " + team1);
 					console.log(scores + " " + times);
 				}
 			}

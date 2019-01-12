@@ -1,33 +1,36 @@
 package com.bet.cn.controller;
 
-import java.util.Map;
-import java.util.List;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import net.sf.json.JSONArray;
 import javax.servlet.ServletConfig;
+import javax.servlet.http.HttpSession;
+import com.bet.cn.service.CorHostEngService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
+import java.beans.PropertyVetoException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.bet.cn.service.CorCustEngService;
 
 
 
-
-public class CornerCustEngland extends HttpServlet {
+public class QueryCornerHostEngland extends HttpServlet {
 	//Fields
 	private static final long serialVersionUID = 1L;
 
-	private CorCustEngService corCustEngService;
+	private CorHostEngService corHostEngService;
 	
 	
-    public CornerCustEngland() {
+	
+    public QueryCornerHostEngland() {
         super();
     }
 
 	public void init(ServletConfig config) throws ServletException {
-		corCustEngService = new CorCustEngService();
+		corHostEngService = new CorHostEngService();
 	}
 
 	public void destroy() {
@@ -41,7 +44,7 @@ public class CornerCustEngland extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Map<String, Object>> resultList = new ArrayList<>();
 
-		resultList = corCustEngService.service();
+		resultList = corHostEngService.service();
 
 		// Set response : Access-Control-Allow-Origin
 		response.setHeader("Access-Control-Allow-Origin", "*");
@@ -50,7 +53,7 @@ public class CornerCustEngland extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 
 		//5. JSON Array is array, so get field value should define index[0, 1, 2...]
-		
+
 		//Set return value
 		JSONArray jsonArray = JSONArray.fromObject(resultList);
 		response.getWriter().write(jsonArray.toString());
