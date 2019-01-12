@@ -1,0 +1,21 @@
+{
+	"manifest_version": 2, 
+	"name": "Bet Extension", 
+	"version": "1.0", 
+	"description": "Bet extension...", 
+	"browser_action": { 
+		"default_icon": "/logo.jpg" 
+	},
+	"permissions": [ 
+		"https://*/",
+		"bookmarks",
+		"tabs",
+		"history"
+	],
+	"content_scripts": [
+		{
+			"matches": ["https://www.653228.com/*"],
+			"js": ["jquery-2.1.1.min.js","sample.js"] 
+		}
+	]
+}
