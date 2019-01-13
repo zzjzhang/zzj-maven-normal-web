@@ -1,68 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns="http://java.sun.com/xml/ns/javaee" 
-xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-					http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd 
-					http://java.sun.com/xml/ns/javaee 
-					http://xmlns.jcp.org/xml/ns/javaee" id="WebApp_ID" version="3.0">
-
-    <display-name>zzj-normal-web</display-name>
-    <filter>
-        <filter-name>FilterLoginValidation</filter-name>
-        <filter-class>com.ecommerce.cn.business.FilterLoginValidation</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>FilterLoginValidation</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    <servlet>
-        <description>Servlet for log in.</description>
-        <servlet-name>ServletLogin</servlet-name>
-        <servlet-class>com.ecommerce.cn.business.ServletLogin</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <description>Servlet for log out.</description>
-        <servlet-name>ServletLogout</servlet-name>
-        <servlet-class>com.ecommerce.cn.business.ServletLogout</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <description>Servlet for display product detail.</description>
-        <servlet-name>ServletDisplayProductDetail</servlet-name>
-        <servlet-class>com.ecommerce.cn.business.ServletDisplayProductDetail</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-
-
-    <!-- BET -->
-    <servlet>
-        <description></description>
-        <servlet-name>cornerHostEngland</servlet-name>
-        <servlet-class>com.bet.cn.controller.CornerHostEngland</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <description></description>
-        <servlet-name>cornerCustEngland</servlet-name>
-        <servlet-class>com.bet.cn.controller.CornerCustEngland</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-  
-  
-  
-  
-    <servlet-mapping>
-        <servlet-name>cornerHostEngland</servlet-name>
-        <url-pattern>/cornerHostEngland</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>cornerCustEngland</servlet-name>
-        <url-pattern>/cornerCustEngland</url-pattern>
-    </servlet-mapping>
-  
-  
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>zzj-normal-web</display-name>
+  <filter>
+    <filter-name>FilterLoginValidation</filter-name>
+    <filter-class>com.ecommerce.cn.business.FilterLoginValidation</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FilterLoginValidation</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description>Servlet for log in.</description>
+    <servlet-name>ServletLogin</servlet-name>
+    <servlet-class>com.ecommerce.cn.business.ServletLogin</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <description>Servlet for log out.</description>
+    <servlet-name>ServletLogout</servlet-name>
+    <servlet-class>com.ecommerce.cn.business.ServletLogout</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <description>Servlet for display product detail.</description>
+    <servlet-name>ServletDisplayProductDetail</servlet-name>
+    <servlet-class>com.ecommerce.cn.business.ServletDisplayProductDetail</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <description></description>
+    <servlet-name>queryCornerHostEngland</servlet-name>
+    <servlet-class>com.bet.cn.controller.QueryCornerHostEngland</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <description></description>
+    <servlet-name>queryCornerCustEngland</servlet-name>
+    <servlet-class>com.bet.cn.controller.QueryCornerCustEngland</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <description></description>
+    <servlet-name>recordController</servlet-name>
+    <servlet-class>com.bet.cn.controller.RecordController</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>recordController</servlet-name>
+    <url-pattern>/recordController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>queryCornerHostEngland</servlet-name>
+    <url-pattern>/queryCornerHostEngland</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>queryCornerCustEngland</servlet-name>
+    <url-pattern>/queryCornerCustEngland</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ServletLogin</servlet-name>
     <url-pattern>/ServletLogin</url-pattern>
@@ -75,9 +69,6 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
     <servlet-name>ServletDisplayProductDetail</servlet-name>
     <url-pattern>/ServletDisplayProductDetail</url-pattern>
   </servlet-mapping>
-
-
-
   <welcome-file-list>
     <welcome-file>MAINCATEGORY.jsp</welcome-file>
   </welcome-file-list>

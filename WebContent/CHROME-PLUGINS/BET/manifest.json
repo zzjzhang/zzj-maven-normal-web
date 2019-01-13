@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2, 
-	"name": "Bet Extension", 
+	"name": "BET-365 Extension", 
 	"version": "1.0", 
-	"description": "Bet extension...", 
+	"description": "BET-365 extension...", 
 	"browser_action": { 
 		"default_icon": "/logo.jpg" 
 	},
@@ -14,8 +14,8 @@
 	],
 	"content_scripts": [
 		{
-			"matches": ["https://www.653228.com/*"],
-			"js": ["jquery-2.1.1.min.js","sample.js"] 
+			"matches": ["https://www.448365365.com/*"],
+			"js": ["jquery_1.9.1.js","bet365.js"]
 		}
 	]
 }

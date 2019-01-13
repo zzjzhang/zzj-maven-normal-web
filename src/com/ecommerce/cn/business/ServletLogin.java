@@ -3,8 +3,6 @@ package com.ecommerce.cn.business;
 import java.io.IOException;
 import java.sql.SQLException;
 import net.sf.json.JSONArray;
-
-import com.config.RedisConfig;
 import com.ecommerce.cn.bean.User;
 import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpSession;

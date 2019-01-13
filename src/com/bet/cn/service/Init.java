@@ -13,9 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import org.codehaus.jackson.map.ObjectMapper;
-
-import com.config.RedisConfig;
-
 import javax.servlet.http.HttpServletResponse;
 
 
