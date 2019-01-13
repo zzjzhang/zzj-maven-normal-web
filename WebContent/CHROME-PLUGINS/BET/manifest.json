@@ -15,7 +15,7 @@
 	"content_scripts": [
 		{
 			"matches": ["https://www.448365365.com/*"],
-			"js": ["jquery_1.9.1.js","bet365.js"]
+			"js": ["jquery_1.9.1.js","bet.js"]
 		}
 	]
 }
