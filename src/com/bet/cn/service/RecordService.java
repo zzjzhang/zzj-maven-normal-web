@@ -18,21 +18,23 @@ public class RecordService {
 		
 	}
 
-	public void service(Game game) {
-		checkRedis(game);
+	public void service(String team) {
+		checkRedis(team);
 	}
 
 	//
-	private void checkRedis(Game game) {
+	private void checkRedis(String team) {
 		jedis = new Jedis(RedisConfig.ip, RedisConfig.port);
-		Boolean exists = jedis.exists(game.getTeams());
+		Boolean exists = jedis.exists(team);
 
 		if(exists) {
 			// do nothing...
 		} else {
 			// set redis
-			jedis.hset(game.getTeams(), "scores", game.getScores());
-			jedis.hset(game.getTeams(), "time", game.getTime());
+			// jedis.hset(game.getTeams(), "scores", game.getScores());
+			// jedis.hset(game.getTeams(), "time", game.getTime());
+			
+			jedis.set(team, "");
 
 			// 
 			try {
@@ -47,6 +49,8 @@ public class RecordService {
 				
 			}
 		}
+
+		jedis.close();
 	}
 
 	public static void main(String[] args) {
@@ -55,6 +59,6 @@ public class RecordService {
 		game.setTime("time");
 		game.setScores("1-1");
 		
-		new RecordService().checkRedis(game);
+		// new RecordService().checkRedis(game);
 	}
 }
