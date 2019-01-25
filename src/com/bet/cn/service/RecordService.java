@@ -2,6 +2,8 @@ package com.bet.cn.service;
 
 import com.bet.cn.bean.Game;
 import java.io.FileInputStream;
+import java.util.List;
+
 import javazoom.jl.player.Player;
 import redis.clients.jedis.Jedis;
 import java.io.BufferedInputStream;
@@ -18,33 +20,34 @@ public class RecordService {
 		
 	}
 
-	public void service(String team) {
-		checkRedis(team);
+	public void serve(List<Game> games) {
+		checkRedis(games);
 	}
 
 	//
-	private void checkRedis(String team) {
+	private void checkRedis(List<Game> games) {
 		jedis = new Jedis(RedisConfig.ip, RedisConfig.port);
-		Boolean exists = jedis.exists(team);
 
-		if(exists) {
-			// do nothing...
-		} else {
+		//////
+		jedis.flushAll();
+		//////
+
+		for(Game game : games) {
+			System.out.println(game.getTeams());
+
 			// set redis
-			// jedis.hset(game.getTeams(), "scores", game.getScores());
-			// jedis.hset(game.getTeams(), "time", game.getTime());
-			
-			jedis.set(team, "");
+			jedis.hset(game.getTeams(), "scores", game.getScores());
+			jedis.hset(game.getTeams(), "time", game.getTime());
 
 			// 
 			try {
-				BufferedInputStream buffer = new BufferedInputStream(new FileInputStream("D:\\ZZJ\\PROJECT\\COMPUTER\\JAVA\\WorkSpace\\zzj-normal-web\\WebContent\\RESOURCES\\music\\music.mp3"));
+				/*BufferedInputStream buffer = new BufferedInputStream(new FileInputStream("D:\\ZZJ\\PROJECT\\COMPUTER\\JAVA\\WorkSpace\\zzj-normal-web\\WebContent\\RESOURCES\\music\\music.mp3"));
 			    Player player = new Player(buffer);
 			    player.play();
 
 			    if(buffer != null) {
 			    	buffer.close();
-			    }
+			    }*/
 			} catch(Exception e) {
 				
 			}

@@ -1,9 +1,8 @@
 package com.bet.cn.controller;
 
+import java.util.List;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-
 import com.bet.cn.bean.Game;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -48,7 +47,7 @@ public class RecordController extends HttpServlet {
 		JSONArray array = JSONArray.fromObject(jsonStr);
 		int size = array.size();
 
-		List<String> teamList = new ArrayList<>();
+		List<Game> gameList = new ArrayList<>();
 
 		for(int i = 0; i < size; i++) {
 			Object object = array.get(i);
@@ -58,22 +57,26 @@ public class RecordController extends HttpServlet {
 			String[] scoreList = game.getScores().split("-");
 			int score1 = Integer.parseInt(scoreList[0]);
 			int score2 = Integer.parseInt(scoreList[1]);
-			
+
 			String[] timeList = game.getTime().split(":");
 			int time1 = Integer.parseInt(timeList[0]);
 			int time2 = Integer.parseInt(timeList[1]);
 
-			if(time1 < 30) {
+			if(time1 < 25) {
 				if(score1 > 0 || score2 > 0) {
-					teamList.add(game.getTeams());
+					gameList.add(game);
 				}
 			}
 		}
 
-		for(String team : teamList) {
-			System.out.println(team);
-			recordService.service(team);
-		}
+		// Set response : Access-Control-Allow-Origin
+		response.setHeader("Access-Control-Allow-Origin", "*");
+
+		// Set response : Character Encoding
+		response.setCharacterEncoding("UTF-8");
+
+		//
+		recordService.serve(gameList);
 	}
 
 

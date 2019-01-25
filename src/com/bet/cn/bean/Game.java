@@ -1,12 +1,19 @@
 package com.bet.cn.bean;
 
-public class Game {
+public class Game implements Comparable<Game> {
 
 	private String teams;
 	private String scores;
 	private String time;
 	private String rates;
 
+	
+	@Override
+	public int compareTo(Game o) {
+		Integer intValue1 = Integer.valueOf(this.time.split(":")[0]);
+		Integer intValue2 = Integer.valueOf(o.getTime().split(":")[0]);
+		return intValue1.compareTo(intValue2);
+	}
 
 	public String getTeams() {
 		return teams;

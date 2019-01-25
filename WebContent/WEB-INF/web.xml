@@ -49,6 +49,22 @@
     <servlet-name>recordController</servlet-name>
     <url-pattern>/recordController</url-pattern>
   </servlet-mapping>
+
+
+
+  <servlet>
+    <description></description>
+    <servlet-name>queryController</servlet-name>
+    <servlet-class>com.bet.cn.controller.QueryController</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>queryController</servlet-name>
+    <url-pattern>/queryController</url-pattern>
+  </servlet-mapping>
+
+
+
   <servlet-mapping>
     <servlet-name>queryCornerHostEngland</servlet-name>
     <url-pattern>/queryCornerHostEngland</url-pattern>

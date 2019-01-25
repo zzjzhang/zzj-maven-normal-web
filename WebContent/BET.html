@@ -88,7 +88,7 @@
 									<h4 class="panel-title">
 										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
 											aria-controls="collapseOne" style="text-decoration: none;">
-											<span aria-hidden="true"></span>&nbsp;&nbsp;英超 - 角球 - 主场
+											<span aria-hidden="true"></span>&nbsp;&nbsp;比赛 - 进球 - 球队
 										</a>
 									</h4>
 								</div>
@@ -96,12 +96,12 @@
 									<div class="panel-body">
 										<div class="row" >
 											<!-- ECharts 1 -->
-											<div id="main1" style="width: 90%; height: 400px; margin: auto"></div>
+											<div id="main1" style="width: 95%; height: 500px; margin: auto"></div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="panel panel-default">
+							<!-- <div class="panel panel-default">
 								<div class="panel-heading" role="tab" id="headingTwo">
 									<h4 class="panel-title">
 										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
@@ -112,16 +112,16 @@
 								</div>
 								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 									<div class="panel-body">
-									
+
 										<div class="row">
-											<!-- ECharts 2 -->
+											ECharts 2
 											<div id="main2" style="width: 998px; height: 400px; margin: auto" ></div>
 										</div>
 
 									</div>
 								</div>
-							</div>
-							<div class="panel panel-default">
+							</div> -->
+							<!-- <div class="panel panel-default">
 								<div class="panel-heading" role="tab" id="headingThree">
 									<h4 class="panel-title">
 										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
@@ -134,14 +134,14 @@
 									<div class="panel-body">
 									
 										<div class="row">
-											<!-- ECharts 3 -->
+											ECharts 3
 											<div id="main3" style="width: 998px; height: 400px; margin: auto" ></div>
 										</div>
 
 									</div>
 								</div>
-							</div>
-							<div class="panel panel-default">
+							</div> -->
+							<!-- <div class="panel panel-default">
 								<div class="panel-heading" role="tab" id="headingFour">
 									<h4 class="panel-title">
 										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
@@ -154,13 +154,13 @@
 									<div class="panel-body">
 									
 										<div class="row">
-											<!-- ECharts 4 -->
+											ECharts 4
 											<div id="main4" style="width: 998px; height: 400px; margin: auto" ></div>
 										</div>
 
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- <div class="panel panel-default">
 								<div class="panel-heading" role="tab" id="headingThree">
 									<h4 class="panel-title">
@@ -204,11 +204,118 @@
 
 			$(document).ready(function() {
 				// HOST & PORT
-				var host = "192.168.168.100";
-				var port = "7070";
+				var host = "127.0.0.1";
+				var port = "8080";
 
-				// 基于准备好的dom，初始化echarts实例
+
+
+
+
+				/////////////////////////////////////////////////////////////////////////////
 				var myChart1 = echarts.init(document.getElementById('main1'));
+
+				var teams = [];
+				var times = [];
+				var scores = [];
+
+				// 发送请求
+				$.ajax({
+					type : "POST",
+					url : "http://localhost:8080/zzj-normal-web/queryController",
+					dataType : "JSON",
+					beforeSend : function() {
+						//
+					},
+					success : function(data) {
+						//console
+						console.log(data);
+						//judge existence
+
+						teams = [];
+						times = [];
+						scores = [];
+
+						for(var i = 0; i < data.length; i++) {
+							teams.push(data[i].teams);
+							times.push(data[i].time);
+							scores.push(data[i].scores);
+						}
+
+						console.log(teams);
+						console.log(times);
+						console.log(scores);
+						
+						// 指定图表的配置项和数据
+						var option1 = {
+						    title: {
+						        text: '进球数据',
+						        subtext: 'from inet'
+						    },
+						    
+						    tooltip: {
+						        trigger: 'axis',
+						        axisPointer: {
+						            type: 'shadow'
+						        }
+						    },
+						    
+						    legend: {
+						        data: ['时间']
+						    },
+						    
+						    grid: {
+						        left: '3%',
+						        right: '4%',
+						        bottom: '3%',
+						        containLabel: true
+						    },
+
+						    xAxis: {
+						        type: 'value',
+						        boundaryGap: [0, 0.01]
+						    },
+						    
+						    yAxis: {
+						        type: 'category',
+						        data: teams
+						    },
+						    
+						    series: [
+						        {
+						            name: '时间:',
+						            type: 'bar',
+						            data: times
+						        }
+						    ]
+						};
+
+						// 使用刚指定的配置项和数据显示图表
+						myChart1.setOption(option1);
+						
+					},
+					error : function(e) {
+						//alert(JSON.stringify(e));
+						console.log(e);
+					}
+				})
+				
+				
+				
+				
+				
+				
+
+				
+
+
+
+
+
+
+	
+				/////////////////////////////////////////////////////////////////////////////
+				// 基于准备好的dom，初始化echarts实例
+				/* var myChart1 = echarts.init(document.getElementById('main1'));
 
 				var avgSelfTeamArrayEngland = [];
 				var avgSelfDataArrayEngland = [];
@@ -273,11 +380,12 @@
 						//alert(JSON.stringify(e));
 						console.log(e);
 					}
-				})
+				}) */
 
 
 
-				var myChart2 = echarts.init(document.getElementById('main2'));
+				/////////////////////////////////////////////////////////////////////////////////////////////////
+				/* var myChart2 = echarts.init(document.getElementById('main2'));
 
 				var custAvgSelfTeamArrayEngland = [];
 				var custAvgSelfDataArrayEngland = [];
@@ -340,11 +448,12 @@
 						//alert(JSON.stringify(e));
 						console.log(e);
 					}
-				})
+				}) */
 
 
 
-				var myChart3 = echarts.init(document.getElementById('main3'));
+				//////////////////////////////////////////////////////////////////////////////////////////////
+				/* var myChart3 = echarts.init(document.getElementById('main3'));
 
 				var avgSelfTeamArrayFrance = [];
 				var avgSelfDataArrayFrance = [];
@@ -408,11 +517,12 @@
 						//alert(JSON.stringify(e));
 						console.log(e);
 					}
-				})
+				}) */
 
 
 
-				var myChart4 = echarts.init(document.getElementById('main4'));
+				///////////////////////////////////////////////////////////////////////////////////////////
+				/* var myChart4 = echarts.init(document.getElementById('main4'));
 
 				var custAvgSelfTeamArrayFrance = [];
 				var custAvgSelfDataArrayFrance = [];
@@ -475,9 +585,9 @@
 						//alert(JSON.stringify(e));
 						console.log(e);
 					}
-				})
+				}) */
 
-			});
+			}); 
 
 		</script>
 	</body>
