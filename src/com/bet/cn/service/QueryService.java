@@ -18,7 +18,7 @@ public class QueryService {
 
 
 	public List<Map<String, Object>> serve() {
-		jedis = new Jedis("127.0.0.1", 6379);
+		jedis = new Jedis("192.168.168.105", 6379);
 		Set<String> keys = jedis.keys("*");
 
 		List<Game> gameList = new ArrayList<>();
