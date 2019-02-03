@@ -1,14 +1,15 @@
 package com.bet.cn.service;
 
 import java.util.Set;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
 import java.util.ArrayList;
 import com.bet.cn.bean.Game;
 import java.util.Collections;
-import java.util.HashMap;
-
 import redis.clients.jedis.Jedis;
+import com.bet.cn.config.RedisConfig;
+
 
 
 public class QueryService {
@@ -18,7 +19,7 @@ public class QueryService {
 
 
 	public List<Map<String, Object>> serve() {
-		jedis = new Jedis("192.168.168.105", 6379);
+		jedis = new Jedis(RedisConfig.ip, RedisConfig.port);
 		Set<String> keys = jedis.keys("*");
 
 		List<Game> gameList = new ArrayList<>();
@@ -72,7 +73,7 @@ public class QueryService {
 
 	public static void main(String[] args) {
 		
-		jedis = new Jedis("127.0.0.1", 6379);
+		jedis = new Jedis(RedisConfig.ip, RedisConfig.port);
 		Set<String> keys = jedis.keys("*");
 
 		List<Game> gameList = new ArrayList<>();
