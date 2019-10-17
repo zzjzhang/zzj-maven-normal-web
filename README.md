@@ -1,2 +1,2 @@
-# zzj-normal-web
-normal web repository
+# zzj-maven-e-commerce
+zzj-maven-e-commerce
